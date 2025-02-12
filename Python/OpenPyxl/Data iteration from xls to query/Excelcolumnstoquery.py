@@ -13,3 +13,6 @@ for row_b, row_m in zip(iter_b, iter_m):
         m = "".join(str(ele) for ele in row_m)
         sqlquery= f"District = '{b}' and Payment = '{m}' OR"
         print(sqlquery)
+
+
+#copy the data from the console and paste it in the sql query
