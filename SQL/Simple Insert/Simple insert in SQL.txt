@@ -1,0 +1,52 @@
+In SQL, you add data to a table using the INSERT INTO statement. The basic syntax looks like this:
+
+sql
+Copy
+Edit
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+Example:
+Let's say you have a table called users with the columns id, name, and email. You can insert a new row like this:
+
+sql
+Copy
+Edit
+INSERT INTO users (id, name, email)
+VALUES (1, 'John Doe', 'john@example.com');
+Inserting Multiple Rows:
+You can insert multiple rows in a single query:
+
+sql
+Copy
+Edit
+INSERT INTO users (id, name, email)
+VALUES
+(2, 'Jane Doe', 'jane@example.com'),
+(3, 'Alice Smith', 'alice@example.com');
+Inserting Data Without Specifying Columns:
+If you're inserting values for all columns in the exact order they were defined, you can skip column names:
+
+sql
+Copy
+Edit
+INSERT INTO users 
+VALUES (4, 'Bob Brown', 'bob@example.com');
+⚠️ This is not recommended unless you're sure of the column order.
+
+Handling Auto-Increment Columns:
+If id is an AUTO_INCREMENT column, you don't need to insert it:
+
+sql
+Copy
+Edit
+INSERT INTO users (name, email)
+VALUES ('Charlie Green', 'charlie@example.com');
+Using DEFAULT Values:
+If a column has a default value, you can use DEFAULT:
+
+sql
+Copy
+Edit
+INSERT INTO users (name, email) 
+VALUES ('David Blue', DEFAULT);
+(Assuming the email column has a default value.)
