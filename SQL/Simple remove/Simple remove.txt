@@ -1,0 +1,46 @@
+To remove rows from a table in SQL, you use the DELETE statement. The basic syntax is:
+
+sql
+Copy
+Edit
+DELETE FROM table_name
+WHERE condition;
+Example:
+If you have a table called users and you want to remove a user with id = 3, you can do:
+
+sql
+Copy
+Edit
+DELETE FROM users
+WHERE id = 3;
+Deleting Multiple Rows:
+You can delete multiple rows by specifying a condition:
+
+sql
+Copy
+Edit
+DELETE FROM users
+WHERE email LIKE '%example.com';
+(This will delete all users with an email ending in @example.com.)
+
+Deleting All Rows (⚠️ Dangerous!):
+If you want to delete all rows from a table but keep the table structure, be very careful—running this will remove everything:
+
+sql
+Copy
+Edit
+DELETE FROM users;
+A safer way to do this is:
+
+sql
+Copy
+Edit
+DELETE FROM users WHERE 1=1;
+Completely Reset a Table:
+If you want to remove all rows and reset auto-increment counters, use TRUNCATE:
+
+sql
+Copy
+Edit
+TRUNCATE TABLE users;
+⚠️ TRUNCATE is faster than DELETE, but it cannot be rolled back in most databases.
